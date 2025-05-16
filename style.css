@@ -139,6 +139,7 @@ nav {
 .logo {
   display: flex;
   align-items: center;
+  margin-left: var(--space-lg); /* Add left padding for logo */
 }
 
 .logo img {
@@ -154,7 +155,9 @@ nav {
 .nav-links {
   display: flex;
   gap: var(--space-md);
+  margin-right: var(--space-lg);
 }
+
 
 .nav-links a {
   text-decoration: none;
@@ -166,8 +169,7 @@ nav {
 }
 
 .nav-links a:hover,
-.nav-links a:focus,
-.nav-links a[aria-current="page"] {
+.nav-links a:focus {
   color: var(--primary);
 }
 
@@ -183,9 +185,22 @@ nav {
 }
 
 .nav-links a:hover::after,
-.nav-links a:focus::after,
-.nav-links a[aria-current="page"]::after {
+.nav-links a:focus::after {
   width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--primary);
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--primary);
 }
 
 footer {
@@ -575,6 +590,12 @@ header.hero {
 
 .project-card:nth-child(3) {
   animation-delay: 0.4s;
+}
+
+.about article.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
 }
 
 @media (max-width: 768px) {
